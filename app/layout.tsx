@@ -11,7 +11,9 @@ export default function RootLayout({
 	const queryClient = new QueryClient()
 	return (
 		<html>
-			<head></head>
+			<head>
+				<title>Github Followers</title>
+			</head>
 			<QueryClientProvider client={queryClient}>
 				<body className="bg-black flex justify-center items-center w-screen h-screen">
 					{children}

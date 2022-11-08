@@ -24,7 +24,6 @@ const Home = () => {
 				className="text-white bg-green-900 rounded-md p-3"
 				type="submit"
 			>
-				{" "}
 				Search
 			</button>
 		</form>
