@@ -1,6 +1,7 @@
 "use client"
 import { GhUser, UserObj } from "../../index.interface"
 import { useQuery } from "react-query"
+import Link from "next/link"
 
 const fetchData = async (user: String) => {
 	const followers: GhUser[] = await fetch(
@@ -39,14 +40,16 @@ const user = ({ params: { user } }: { params: { user: String } }) => {
 	return (
 		<div className="h-[75vh] w-[50vw] rounded-lg border-2 border-white p-2 flex flex-col text-white">
 			<div className="flex flex-row h-1/8 justify-around gap-4 px-2 border-b border-blue-400">
-				<div className="w-full">Name</div>
+				<div className="w-full">UserName</div>
 				<div className="w-1/6">You</div>
 				<div className="w-1/6">Them</div>
 			</div>
 			<div className="overflow-scroll h-full no-scrollbar">
 				{query.data?.map(user => (
 					<div className="flex flex-row justify-around gap-4 px-2 border-b border-white mb-2 p-2">
-						<div className="w-full">{user.login}</div>
+						<div className="w-full">
+							<Link href={`/${user.login}`}>{user.login}</Link>
+						</div>
 						<div className="w-1/6">
 							{user.you ? (
 								<svg

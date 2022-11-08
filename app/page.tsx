@@ -19,6 +19,7 @@ const Home = () => {
 				className="p-3 rounded-md focus:outline-none"
 				value={user}
 				onChange={e => setUser(e.target.value)}
+				placeholder="Github username"
 			/>
 			<button
 				className="text-white bg-green-900 rounded-md p-3"
